@@ -1,0 +1,146 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.controls {
+    text-align: center;
+}
+
+.controls label {
+    display: block;
+    margin: 5px 0;
+}
+
+input[type="number"] {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 5px 10px;
+    width: 60px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Переключатель */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+/* Круглая форма переключателя */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotate 2s linear infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Адаптация для горизонтальной ориентации экрана */
+/* @media (orientation: landscape) {
+    body {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .progress-container {
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+
+    .controls {
+        text-align: left;
+    }
+
+    .controls label {
+        display: inline-block;
+        margin: 0 0 10px 10px;
+    }
+
+    .controls input[type="number"] {
+        margin-bottom: 0;
+        margin-left: 10px;
+    }
+} */
